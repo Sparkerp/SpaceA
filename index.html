@@ -4,422 +4,196 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#05060a">
-<title>We've Moved | SpaceArcades</title>
+<title>Website Moved</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-
-:root {
-    --bg: #05060a;
-    --accent: #9b7bff;
-    --cyan: #59e1ff;
-    --text: #f7f7ff;
-    --muted: #a5a6bb;
-}
-
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-
-html {
-    min-height: 100%;
+    box-sizing: border-box;
 }
 
 body {
     min-height: 100vh;
-    min-height: 100svh;
-    display: grid;
-    place-items: center;
-    padding: 24px;
-    overflow-x: hidden;
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Inter', Arial, sans-serif;
-    position: relative;
-    isolation: isolate;
-}
-
-/* Animated background lighting */
-body::before,
-body::after {
-    content: "";
-    position: fixed;
-    width: 450px;
-    height: 450px;
-    border-radius: 50%;
-    filter: blur(110px);
-    opacity: .23;
-    z-index: -1;
-    pointer-events: none;
-    animation: float 12s ease-in-out infinite alternate;
-}
-
-body::before {
-    background: #7546ff;
-    top: -180px;
-    left: -160px;
-}
-
-body::after {
-    background: #087eaf;
-    bottom: -200px;
-    right: -150px;
-    animation-delay: -5s;
-}
-
-@keyframes float {
-    from { transform: translate(0, 0) scale(1); }
-    to { transform: translate(65px, 45px) scale(1.15); }
-}
-
-/* Subtle background grid */
-.grid {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    opacity: .15;
-    background-image:
-        linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
-    background-size: 42px 42px;
-    mask-image: linear-gradient(to bottom, black, transparent 90%);
-}
-
-.card {
-    width: min(100%, 570px);
-    padding: 48px 40px 38px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(255,255,255,.12);
-    border-radius: 28px;
-    background: linear-gradient(
-        145deg,
-        rgba(25,26,42,.91),
-        rgba(10,11,19,.88)
-    );
-    box-shadow:
-        0 30px 100px rgba(0,0,0,.55),
-        inset 0 1px 0 rgba(255,255,255,.07);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    animation: appear .8s cubic-bezier(.2,.8,.2,1) both;
-}
-
-.card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 15%;
-    width: 70%;
-    height: 1px;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        var(--accent),
-        var(--cyan),
-        transparent
-    );
-}
-
-@keyframes appear {
-    from { opacity: 0; transform: translateY(22px) scale(.98); }
-    to { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-.brand {
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-    margin-bottom: 35px;
-    color: #e6e5f4;
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-}
-
-.brand-icon {
-    width: 28px;
-    height: 28px;
-    display: grid;
-    place-items: center;
-    border-radius: 9px;
-    color: white;
-    background: linear-gradient(135deg, #9b7bff, #5d58e8);
-    box-shadow: 0 0 24px rgba(155,123,255,.35);
-    font-size: 16px;
-}
-
-.status {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 13px;
-    margin-bottom: 23px;
-    border: 1px solid rgba(155,123,255,.25);
-    border-radius: 100px;
-    background: rgba(155,123,255,.08);
-    color: #c6b7ff;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1.4px;
-    text-transform: uppercase;
-}
-
-.status-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #a58bff;
-    box-shadow: 0 0 12px #a58bff;
-}
-
-h1 {
-    font-size: clamp(36px, 7vw, 53px);
-    line-height: 1.08;
-    letter-spacing: -2.5px;
-    font-weight: 900;
-    margin-bottom: 19px;
-}
-
-.gradient-text {
-    background: linear-gradient(100deg, #bca9ff, #8cbbff 55%, #65e5ed);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.description {
-    max-width: 410px;
-    margin: 0 auto;
-    color: var(--muted);
-    font-size: 15px;
-    line-height: 1.85;
-}
-
-.description strong {
-    color: #ededff;
-    font-weight: 600;
-}
-
-.divider {
-    width: 100%;
-    height: 1px;
-    margin: 29px 0;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,.13),
-        transparent
-    );
-}
-
-.destination {
-    display: flex;
-    align-items: center;
-    gap: 13px;
-    text-align: left;
-    padding: 15px;
-    margin-bottom: 22px;
-    border: 1px solid rgba(255,255,255,.08);
-    border-radius: 15px;
-    background: rgba(255,255,255,.035);
-}
-
-.destination-icon {
-    flex: 0 0 43px;
-    height: 43px;
-    display: grid;
-    place-items: center;
-    border: 1px solid rgba(155,123,255,.2);
-    border-radius: 12px;
-    background: rgba(155,123,255,.1);
-    color: #c4b2ff;
-    font-size: 20px;
-}
-
-.destination-info {
-    min-width: 0;
-    flex: 1;
-}
-
-.destination-label {
-    margin-bottom: 5px;
-    color: #888aa3;
-    font-size: 10px;
-    letter-spacing: 1.5px;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.destination-name {
-    color: #f1efff;
-    font-size: 14px;
-    font-weight: 700;
-}
-
-.destination-url {
-    color: #999ab2;
-    font-size: 11px;
-    margin-top: 4px;
-    overflow-wrap: anywhere;
-}
-
-.destination-arrow {
-    color: #777990;
-    font-size: 19px;
-}
-
-.open-button {
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 11px;
+    padding: 20px;
+    background: #050608;
+    color: #f5f5f5;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+/* Subtle space background */
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+        radial-gradient(ellipse at 50% 100%,
+            rgba(35, 43, 58, 0.25), transparent 65%),
+        radial-gradient(ellipse at 10% 0%,
+            rgba(40, 45, 55, 0.15), transparent 55%),
+        #050608;
+}
+
+.stars {
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(1px 1px at 15% 20%, #ffffff55 50%, transparent),
+        radial-gradient(1px 1px at 75% 30%, #ffffff40 50%, transparent),
+        radial-gradient(1px 1px at 40% 75%, #ffffff35 50%, transparent),
+        radial-gradient(1px 1px at 90% 80%, #ffffff45 50%, transparent),
+        radial-gradient(1px 1px at 60% 10%, #ffffff30 50%, transparent),
+        radial-gradient(1px 1px at 25% 60%, #ffffff30 50%, transparent);
+    opacity: 0.5;
+}
+
+.container {
     width: 100%;
-    min-height: 57px;
-    padding: 16px 22px;
-    border-radius: 14px;
-    background: linear-gradient(100deg, #a18aff, #7c78ff 55%, #63cde9);
-    color: #080914;
+    max-width: 460px;
+    padding: 38px;
+    text-align: center;
+    background: rgba(12, 13, 16, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 12px;
+    box-shadow: 0 20px 80px #0008;
+    animation: appear 0.5s ease-out;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.label {
+    display: inline-block;
+    margin-bottom: 24px;
+    padding: 7px 11px;
+    border: 1px solid #303239;
+    border-radius: 5px;
+    color: #b5b7bf;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: clamp(30px, 6vw, 38px);
+    letter-spacing: -1.2px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+p {
+    color: #a7a9b1;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.destination {
+    margin: 26px 0 18px;
+    padding: 14px;
+    border: 1px solid #292b31;
+    border-radius: 7px;
+    background: #101115;
+}
+
+.destination-title {
+    margin-bottom: 7px;
+    color: #f0f0f0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.destination-url {
+    color: #858892;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px 20px;
+    border: 1px solid #eee;
+    border-radius: 7px;
+    background: #f2f2f2;
+    color: #111;
     text-decoration: none;
     font-size: 14px;
-    font-weight: 800;
-    letter-spacing: .3px;
-    box-shadow: 0 8px 30px rgba(124,120,255,.22);
-    transition: transform .22s ease, box-shadow .22s ease, filter .22s ease;
+    font-weight: 600;
+    transition: background 0.2s, transform 0.2s;
 }
 
-.open-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 14px 40px rgba(124,120,255,.35);
-    filter: brightness(1.08);
-}
-
-.open-button:active {
-    transform: translateY(0) scale(.99);
-}
-
-.open-button:focus-visible {
-    outline: 3px solid white;
-    outline-offset: 4px;
-}
-
-.button-arrow {
-    font-size: 19px;
-    transition: transform .22s ease;
-}
-
-.open-button:hover .button-arrow {
-    transform: translate(3px, -3px);
+.button:hover {
+    background: #d8d8d8;
+    transform: translateY(-1px);
 }
 
 .footer {
     margin-top: 24px;
-    color: #666880;
+    color: #666871;
     font-size: 11px;
-    letter-spacing: .3px;
-}
-
-.footer span {
-    color: #9b8bdf;
 }
 
 @media (max-width: 480px) {
-    body {
-        padding: 16px;
-    }
-
-    .card {
-        padding: 37px 23px 27px;
-        border-radius: 23px;
-    }
-
-    .brand {
-        margin-bottom: 29px;
-    }
-
-    h1 {
-        letter-spacing: -1.7px;
-    }
-
-    .description {
-        font-size: 14px;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
+    .container {
+        padding: 28px 22px;
     }
 }
 </style>
 </head>
 
 <body>
-<div class="grid"></div>
+<div class="background">
+    <div class="stars"></div>
+</div>
 
-<main class="card">
-    <div class="brand">
-        <span class="brand-icon">S</span>
-        SPACEARCADES
-    </div>
+<main class="container">
 
-    <div class="status">
-        <span class="status-dot"></span>
-        We've moved
-    </div>
+    <div class="label">Website Update</div>
 
-    <h1>
-        A new home.<br>
-        <span class="gradient-text">A new beginning.</span>
-    </h1>
+    <h1>We've moved.</h1>
 
-    <p class="description">
-        We've moved to a <strong>brand-new website!</strong>
-        The old website has been replaced as we've created
-        a new home for SpaceArcades.
+    <p>
+        We've created a new website and moved everything over.
+        This page is here to point you to the new location.
         <br><br>
-        Everything starts here. Click below to visit our new site
-        and check it out!
+        Click below to visit the new website.
     </p>
 
-    <div class="divider"></div>
-
     <div class="destination">
-        <div class="destination-icon">↗</div>
-
-        <div class="destination-info">
-            <div class="destination-label">Your destination</div>
-            <div class="destination-name">SpaceArcades — New Website</div>
-            <div class="destination-url">
-                spacearcades.github.io/SpaceA/
-            </div>
+        <div class="destination-title">New Website</div>
+        <div class="destination-url">
+            spacearcades.github.io/SpaceA/
         </div>
-
-        <div class="destination-arrow">›</div>
     </div>
 
     <a
-        class="open-button"
+        class="button"
         href="https://spacearcades.github.io/SpaceA/"
         target="_blank"
         rel="noopener noreferrer"
     >
-        Visit the New Website
-        <span class="button-arrow">↗</span>
+        Open Website <span aria-hidden="true">↗</span>
     </a>
 
     <div class="footer">
-        Thanks for visiting <span>SpaceArcades</span> ✦
+        Thanks for visiting.
     </div>
+
 </main>
 </body>
 </html>
